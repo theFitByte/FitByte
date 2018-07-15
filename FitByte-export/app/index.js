@@ -41,7 +41,7 @@ function updateClock() {
 
 //**************************END @ ANALOG CLOCK FUNCTIONALITY FOR MAIN SCREEN**************************//
 
-import document from "document";
+var stepgoal = 10000;
 
 let container = document.getElementById("container");
 
@@ -56,9 +56,11 @@ clock.ontick = () => updateClock();
 let btnBL = document.getElementById("btn-bl");
 btnBL.onactivate = function(evt) {
   console.log("Bottom left!");
+  stepgoal -= 100;
 }
 
 let btnBR = document.getElementById("btn-br");
 btnBR.onactivate = function(evt) {
   console.log("Bottom right!");
+  stepgoal += 100;
 }
