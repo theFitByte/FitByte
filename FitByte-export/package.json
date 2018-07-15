@@ -2,7 +2,7 @@
   "fitbit": {
     "appUUID": "235364ae-edc2-4b2c-89ed-28f561151d41",
     "appType": "app",
-    "appDisplayName": "FitByte",
+    "appDisplayName": "Fitvestment",
     "iconFile": "resources/icon.png",
     "wipeColor": "#4caf50",
     "requestedPermissions": [],
@@ -11,7 +11,7 @@
     ],
     "i18n": {
       "en": {
-        "name": "FitByte"
+        "name": "Fitvestment"
       }
     }
   }

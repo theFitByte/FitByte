@@ -39,28 +39,26 @@ function updateClock() {
   secHand.groupTransform.rotate.angle = secondsToAngle(secs);
 }
 
-// Update the clock every tick event
-clock.ontick = () => updateClock();
-
 //**************************END @ ANALOG CLOCK FUNCTIONALITY FOR MAIN SCREEN**************************//
 
+import document from "document";
 
+let container = document.getElementById("container");
 
+// Get the selected index
+let currentIndex = container.value;
 
+// Set the selected index
+container.value = 0; // jump to first slide
 
+clock.ontick = () => updateClock();
 
-// Get a handle on the instance
-var logo_static = document.getElementById("logo_static");
-var logo_animated = document.getElementById("logo_animated");
+let btnBL = document.getElementById("btn-bl");
+btnBL.onactivate = function(evt) {
+  console.log("Bottom left!");
+}
 
-// Animate after a 5 second delay
-setTimeout(function() {
-  logo_static.animate("enable"); // Specify the name of the event to trigger
-}, 5000);
-logo_static.animate("disable"); // Specify the name of the event to trigger
-
-/*
-// Animate after a 5 second delay
-setTimeout(function() {
-  logo_animated.animate("enable"); // Specify the name of the event to trigger
-}, 5000); */
+let btnBR = document.getElementById("btn-br");
+btnBR.onactivate = function(evt) {
+  console.log("Bottom right!");
+}
