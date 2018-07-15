@@ -1,8 +1,9 @@
-//**************************BEGIN @ ANALOG CLOCK FUNCTIONALITY FOR MAIN SCREEN**************************//
-
+//**************************************INCLUDES***************************************//
 import clock from "clock";
 import document from "document";
 
+
+//**************************BEGIN ANALOG CLOCK FACE FUNCTIONS**************************//
 // Update the clock every second
 clock.granularity = "seconds";
 
@@ -39,20 +40,9 @@ function updateClock() {
   secHand.groupTransform.rotate.angle = secondsToAngle(secs);
 }
 
-//**************************END @ ANALOG CLOCK FUNCTIONALITY FOR MAIN SCREEN**************************//
 
+//**************************BUTTON DEFINITIONS**************************//
 var stepgoal = 10000;
-
-let container = document.getElementById("container");
-
-// Get the selected index
-let currentIndex = container.value;
-
-// Set the selected index
-container.value = 0; // jump to first slide
-
-clock.ontick = () => updateClock();
-
 let btnBL = document.getElementById("btn-bl");
 btnBL.onactivate = function(evt) {
   console.log("Bottom left!");
@@ -64,3 +54,18 @@ btnBR.onactivate = function(evt) {
   console.log("Bottom right!");
   stepgoal += 100;
 }
+
+
+//********************PANORAMA CONTAINER DEFINITIONS*********************//
+let container = document.getElementById("container");
+// Get the selected index
+let currentIndex = container.value;
+
+
+//****************************START PANORAMA*****************************//
+// Set the selected index
+container.value = 0; // jump to first slide
+
+
+//**************************START ANALOG CLOCK***************************//
+clock.ontick = () => updateClock();
